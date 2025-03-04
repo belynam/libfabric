@@ -603,6 +603,15 @@ static inline void *ofi_ibuf_alloc_at(struct ofi_bufpool *pool, size_t index)
 }
 
 /*
+ * Empty buf pool init function that can be used to avoid initializing
+ * newly allocated buf pool entries.
+ */
+static inline void ofi_bufpool_init_none(struct ofi_bufpool_region *region, void *buf)
+{
+	/* This function is purposely empty */
+}
+
+/*
  * Persistent memory support
  */
 void ofi_pmem_init(void);
